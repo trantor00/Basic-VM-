@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1596550222 source:c:\users\berk\desktop\basicvm\basicvm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cpu.h"
+
+1596547738 c:\users\berk\desktop\basicvm\basicvm\basicvm.h
+
+1596977010 source:c:\users\berk\desktop\basicvm\basicvm\stack.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+
+1596977056 source:c:\users\berk\desktop\basicvm\basicvm\testcpu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	"stack.h"
+	"processorInstructions.h"
+
+1596841175 c:\users\berk\desktop\basicvm\basicvm\stack.h
+	"processorInstructions.h"
+
+1596551205 c:\users\berk\desktop\basicvm\basicvm\cpu.h
+	"stack.h"
+	"processorInstructions.h"
+
+1596547894 c:\users\berk\desktop\basicvm\basicvm\processorinstructions.h
+
+1596841175 source:c:\users\berk\desktop\basicvm\basicvm\cpu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cpu.h"
+
+1596550229 source:c:\users\berk\desktop\basicvm\basicvm\testmachine.c
+
+1596551125 c:\users\berk\desktop\basicvm\basicvm\testcpu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+	"processorInstructions.h"
+
