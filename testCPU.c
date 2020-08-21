@@ -16,7 +16,7 @@ bool compiledOutput();
 int main(int argc, char *argv[]) {
   test1();
 
-
+  getch();
     return 0;
 }
 
