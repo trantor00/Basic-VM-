@@ -89,6 +89,11 @@ switch(instructionType){
 }
 int instructionToInt(char * instructionType){
     int instruction;
+  /*  int j;
+    for(j=0;j<6;j++){
+       if(instructionType[j]=='\n')
+        instructionType[j]='\0';
+    }*/
       if (!strcmp(instructionType,"ADD")) instruction=0;
       if (!strcmp(instructionType,"SUB")) instruction=1;
       if (!strcmp(instructionType,"MUL")) instruction=2;

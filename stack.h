@@ -6,7 +6,7 @@
 
 int DATA[MAX_SIZE];
 int STACK[MAX_SIZE];
-int INSTRUCTIONS[10];
+int INSTRUCTIONS[MAX_SIZE];
 
 typedef struct instructionStack{
 	int ip;
@@ -27,6 +27,7 @@ typedef struct dataStack{
 //prototypes
 void makeDataLIST(int instructionSet[],int supposedSIZE);
 char *instructionToString(int instructionType);
+int instructionToInt(char * instructionType);
 void showStack(int supposedSIZE);
 void duplicateArrays(int arr1[], int arr2[]);   //first array must be empty!
 

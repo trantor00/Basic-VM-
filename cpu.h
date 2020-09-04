@@ -14,7 +14,4 @@ void cpu(int instructionSet[], int ip, int memorysize, int CODESIZE);
 
 
 
-
-
-
 #endif // CPU_H_

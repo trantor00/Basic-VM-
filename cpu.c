@@ -9,7 +9,7 @@ void cpu(int instructionSet[], int ip, int memorysize, int CODESIZE){
    IP = ip;
    int data[CODESIZE];
    int stack[CODESIZE];
-   duplicateArrays(DATA,data); duplicateArrays(STACK,stack); duplicateArrays(INSTRUCTIONS, instructionSet);
+  // duplicateArrays(DATA,data); duplicateArrays(STACK,stack); duplicateArrays(INSTRUCTIONS, instructionSet);
 
    while(IP< CODESIZE){
         printf("Instruction turn= %d | Instruction type= %s\n",IP,instructionToString(instructionSet[IP]));
