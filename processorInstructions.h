@@ -1,7 +1,6 @@
 #ifndef PROCESSORINSTRUCTIONS_H_
 #define PROCESSORINSTRUCTIONS_H_
 
-
 //Byte Codes
 //Register arithmetics
 #define ADD 0

@@ -11,4 +11,5 @@ add_executable(basicvm
  testCPU.c
  cpu.c
  stack.c
+ cpuIO.c
  )

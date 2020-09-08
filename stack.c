@@ -1,34 +1,37 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "stack.h"
 
 
-
-//instructionStackHead=NULL;
-//dataStackHead=NULL;
-
-void makeDataLIST(int instructionSet[], int supposedSIZE ){  // pushing
+void makeDataLIST(int32_t instructionSet[], int32_t supposedSIZE ){  // pushing
 // Instruction Stack-List
    int i;
    for(i=0;i<supposedSIZE;i++){
-    int newIP=instructionSet[i];
+    int32_t newIP=instructionSet[i];
     instructionStack *currentStack=(instructionStack *)malloc(sizeof(instructionStack*));
         currentStack->ip=newIP;
         strcpy(currentStack->instructionTYPE,instructionToString(newIP));
         currentStack->nextStack=instructionStackHead;
         instructionStackHead=currentStack;
   }
-// Data Stack-List
+// Data(RAM) Stack-List
 for(i=0;i<supposedSIZE;i++){
-    int newSP=STACK[i];
+    int32_t newSP=RAM[i];
     dataStack *currentStack=(dataStack *)malloc(sizeof(dataStack*));
        currentStack->sp=newSP;
        currentStack->nextStack=dataStackHead;
        dataStackHead=currentStack;
 }
 }
-char *instructionToString(int instructionType){
+void showLinkedStacks(int32_t newInstructionSet[],int32_t size){
+printf("\n-------------------Instruction stack-------------------\n");
+   makeDataLIST(newInstructionSet,size);
+   instructionStack *current=instructionStackHead;
+  while(current!=NULL){
+    printf("%s\n",current->instructionTYPE);
+    current=current->nextStack;
+  }
+  free(current);
+}
+char *instructionToString(int32_t instructionType){
     char * instructionName;
 switch(instructionType){
        case ADD:
@@ -87,8 +90,8 @@ switch(instructionType){
            break;}
            return instructionName;
 }
-int instructionToInt(char * instructionType){
-    int instruction;
+int32_t instructionToInt(char * instructionType){
+    int32_t instruction;
   /*  int j;
     for(j=0;j<6;j++){
        if(instructionType[j]=='\n')
@@ -118,17 +121,17 @@ int instructionToInt(char * instructionType){
 
 
 
-void showStack(int supposedSIZE){
+void showStack(int32_t supposedSIZE){
     int i;
     printf("\n");
     for(i=0;i<supposedSIZE;i++){
-        printf("Stack element %d. ->> %d\n",i,STACK[i]);
+        printf("Stack element %d. ->> %d\n",i,RAM[i]);
     }
-    printf("All stack elements demonstrated..\n");
+    printf("All stack elements are demonstrated..\n");
 }
 
-void duplicateArrays(int arr1[], int arr2[]){
- int arraySize=sizeof(arr2)/sizeof(arr2[0]);
+void duplicateArrays(int32_t arr1[], int32_t arr2[]){
+ int32_t arraySize=sizeof(arr2)/sizeof(arr2[0]);
  int i;
  for(i=0;i<arraySize;i++){
     arr1[i]=arr2[i];
