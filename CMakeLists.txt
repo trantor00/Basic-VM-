@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION "3.18.1")
 project(basicvm C)
 
 
-include_directories( basicvm
+include_directories( basiccpu
  cpu.h
  stack.h
  cpuInstructions.h)

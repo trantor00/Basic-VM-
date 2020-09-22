@@ -1,7 +1,7 @@
 #ifndef CPU_H_
 #define CPU_H_
 
-#include "stack.h"
+#include "stack-lists/stack.h"
 #include "processorInstructions.h"
 
 

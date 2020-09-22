@@ -3,7 +3,7 @@
 bool sourceInput(){
    char lines[20][7];
      FILE *FILE;
-    char * FILENAME="sourceFILE";
+    char * FILENAME="sourcefile";
 
     FILE= fopen(FILENAME,"r");
      if(FILE==NULL){
@@ -46,7 +46,7 @@ bool sourceInput(){
 
 bool compiledOutput(){
      FILE *FILE;
-    const char * FILENAME="CompiledFILE";
+    const char * FILENAME="processedfile";
     FILE= fopen(FILENAME,"w");
     int i;
    if(debug){

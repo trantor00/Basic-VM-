@@ -1,6 +1,7 @@
-#include "stack.h"
+#include "stack-lists/stack.h"
 /* #include "cpu.h" */
 #include "processorInstructions.h"
+#include "Interpreter.h"
 
 /*For a simple cpu
   test use test1();*/
