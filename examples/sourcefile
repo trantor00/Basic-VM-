@@ -1,0 +1,10 @@
+execute:   // sample code
+
+int z = 5+7;   // addition
+int y=14+91;
+echo "hello";  // prints out hello
+echo 10;
+
+return -1;
+
+// program returns -1 and halts..
