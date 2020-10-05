@@ -8,4 +8,4 @@ Source code ,assemled code and compiled file xamples are under examples section.
 ## How to
 To simply execute assembler and cpu just use ./test.sh on the shell.
 
-![Execution](https://i.imgur.com/xQFr0sg.png)
+![Execution](https://i.imgur.com/5Yp2ypV.png)
