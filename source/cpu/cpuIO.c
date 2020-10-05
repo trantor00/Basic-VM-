@@ -9,10 +9,8 @@ bool sourceInput(const char * FILENAME){
             return false;
         }
     int i=0;
-    int givenData=0;
     char *asd=malloc(sizeof(lines)/sizeof(lines[0]));
     while(!feof(FILE)){
-      givenData++;
     fgets(asd,7,FILE);
     int x;
     for(x=0;x<7;x++){  // to get rid of \n
@@ -29,7 +27,6 @@ bool sourceInput(const char * FILENAME){
    instructionSize=i;
    free(asd);
    fclose(FILE);
-  instructionSize=givenData;
    int j;
    for(j=0;j<instructionSize-1;j++){
    if(lines[j][0]>=48 && lines[j][0]<=57){
@@ -52,16 +49,20 @@ bool compiledOutput(const char * FILENAME){
     i=0;
     fprintf(FILE, "Memory Location - Data\n");
    while(RAM[i]!=0){
+           i++;
       int data=RAM[i];
-    fprintf(FILE, "%d. %d -> %d\n",i,&data+i,data);
-       i++;
+       fprintf(FILE, "%d. %p -> %d\n",i,&data+i,data);
    }
 }
     i=0;
-  if(debug)  fprintf(FILE, "COMPILED DATA\n");
+  if(debug) { fprintf(FILE, "COMPILED DATA\n");}
    while(DATA[i]!=HALT){
     fprintf(FILE, "%d\n",DATA[i]);
        i++;
+       if(DATA[i]==0){
+        if(DATA[i+1]==0)
+        break;
+       }
    }
     fclose(FILE);
     printf("\nCompiled file created as %s",FILENAME);

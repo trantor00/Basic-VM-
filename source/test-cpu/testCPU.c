@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
     if(argc==3){
    debug = 1;  // initialize 0 not to get cpu compilation details
    if(sourceInput(argv[1])){  // input from a source file
-   cpu(INSTRUCTIONS,0,1000,instructionSize,debug);
+   cpu(INSTRUCTIONS,0,100,instructionSize,debug);
    if(debug){
    showStack(instructionSize);
    //showLinkedStacks(INSTRUCTIONS,instructionSize);
