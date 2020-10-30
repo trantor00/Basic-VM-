@@ -13,7 +13,7 @@ void cpu(int32_t instructionSet[], uint16_t ip, uint16_t memorysize, uint16_t CO
      switch(opcode){
        case ADD:
             SP++;
-            RAM[SP]=RAM[SP-1]+RAM[SP-2];
+            RAM[SP]=RAM[SP-1]+RAM[SP-2];  // I used a ram instead of using a subroutine. Which is a bad practice -_-
            break;
        case SUB:
             SP++;
@@ -43,18 +43,14 @@ void cpu(int32_t instructionSet[], uint16_t ip, uint16_t memorysize, uint16_t CO
             SP++;
             RAM[SP]=RAM[SP-1]^RAM[SP-2];
            break;
-       case LOAD:{
-            int32_t loadVALUE=RAM[instructionSet[IP]];
-            IP++;
+       case LOAD:
+            IP = instructionSet[IP];
+            IP --;
+           break;
+       case STOR:
             SP++;
-            RAM[SP]=loadVALUE;
-           break;}
-       case STOR:{
-            int32_t storVALUE=RAM[SP];
-            SP--;
-            RAM[instructionSet[IP]]=storVALUE;
-            IP++;
-           break;}
+            RAM[SP] = instructionSet[IP];
+           break;
        case PUSH:{
             int value=instructionSet[IP];
             IP++;
@@ -62,17 +58,18 @@ void cpu(int32_t instructionSet[], uint16_t ip, uint16_t memorysize, uint16_t CO
             RAM[SP]=value;
            break;}
        case POP:
-            SP--; // simple as this -_-
+            SP--; 
            break;
        case CALL:{
             int32_t callVALUE=instructionSet[IP];
-            IP=RAM[callVALUE]; // I'm not much sure about this section.
+            IP=RAM[callVALUE]; 
            break;}
        case BR:
             IP=instructionSet[IP++];
+            IP--;
            break;
        case RET:
-            RAM[SP]=instructionSet[IP];  // I'm not much sure about this section either.
+            RAM[SP]=instructionSet[IP];  
             SP++;
            break;
        case JMP:{
@@ -100,7 +97,7 @@ void cpu(int32_t instructionSet[], uint16_t ip, uint16_t memorysize, uint16_t CO
             }
    }
 
-}
+} 
 void resetcpu(){
  IP=0;
  SP=-1;

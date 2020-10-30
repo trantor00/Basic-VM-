@@ -1,5 +1,5 @@
 ### Basic cpu implementation with IO (which takes very basic source code and compiles it)
-### Basic assembler implementation is added.
+### Basic assembler implementation is included.
 
 This cpu implementation has its stack lists within and can be used for further development.
 I know they are not professional nor for essential use, so don't ever depend them :)
