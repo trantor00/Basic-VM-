@@ -2,8 +2,10 @@
 ### Basic assembler implementation is included.
 
 This cpu implementation has its stack lists within and can be used for further development.
+
 This implementation isn't professional and can have some bugs!
-Source code ,assemled code and compiled file examples are under examples section.
+
+Source code, assemled code and compiled file examples are under examples section.
 
 ## How to
 To simply execute assembler and cpu just use ./test.sh on the shell.
